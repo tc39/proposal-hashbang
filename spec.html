@@ -86,20 +86,32 @@ emu-example pre {
   <h1>Syntax</h1>
 
   <emu-clause id=sec-updated-syntax>
-    <h1>Updated Productions</h1>
+    <h1>Updated Lexical Productions</h1>
 
-    <emu-grammar>
-      <ins>Hashbang : `#!` SingleLineCommentChars?</ins>
-      Module : <ins>Hashbang_opt</ins> ModuleBody?
-      Script : <ins>Hashbang_opt</ins> ScriptBody?
+    <emu-grammar type="definition">
+      <ins>InputElementDiv ::
+            HashbangComment_opt BodyElements?
+          
+          BodyElements ::
+            BodyElement BodyElements?
+          
+          BodyElement ::
+            WhiteSpace
+            LineTerminator
+            Comment
+            CommonToken
+            DivPunctuator
+            RightBracePunctuator
+
+      </ins>
     </emu-grammar>
-  </emu-clause>
-</emu-clause>
-  <!-- es6num="13.16.1" -->
-  <emu-clause id="sec-debugger-statement-runtime-semantics-evaluation">
-    <h1>Runtime Semantics: Evaluation</h1>
-    <emu-note>
-      <p>None.</p>
-    </emu-note>
+
+    <h1>Hashbang Comments</h1>
+
+    <p>Hashbang Comments are location sensitive and like other types of comments are discarded from the stream of input elements for the syntactic grammar.</p>
+    <emu-grammar type="definition">HashbangComment ::
+      `#!` SingleLineCommentChars?
+    </emu-grammar>
+
   </emu-clause>
 </emu-clause>

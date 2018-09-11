@@ -1,6 +1,6 @@
 <!doctype html>
 <head><meta charset="utf-8">
-<title>Hashbang Grammar for JS</title><script type="application/json" id="menu-search-biblio">[{"type":"clause","id":"sec-intro","aoid":null,"title":"Introduction","titleHTML":"Introduction","number":"","namespace":"<no location>","location":"","referencingIds":[],"key":"Introduction"},{"type":"production","id":"prod-Hashbang","name":"Hashbang","referencingIds":[],"namespace":"<no location>","location":"","key":"Hashbang"},{"type":"production","id":"prod-Module","name":"Module","referencingIds":[],"namespace":"<no location>","location":"","key":"Module"},{"type":"production","id":"prod-Script","name":"Script","referencingIds":[],"namespace":"<no location>","location":"","key":"Script"},{"type":"clause","id":"sec-updated-syntax","aoid":null,"title":"Updated Productions","titleHTML":"Updated Productions","number":"1.1","namespace":"<no location>","location":"","referencingIds":[],"key":"Updated Productions"},{"type":"clause","id":"sec-syntax","aoid":null,"title":"Syntax","titleHTML":"Syntax","number":"1","namespace":"<no location>","location":"","referencingIds":[],"key":"Syntax"},{"type":"clause","id":"sec-debugger-statement-runtime-semantics-evaluation","aoid":null,"title":"Runtime Semantics: Evaluation","titleHTML":"Runtime Semantics: Evaluation","number":"2","namespace":"<no location>","location":"","referencingIds":[],"key":"Runtime Semantics: Evaluation"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A","namespace":"<no location>","location":"","referencingIds":[],"key":"Copyright & Software License"}]</script><script>"use strict";
+<title>Hashbang Grammar for JS</title><script type="application/json" id="menu-search-biblio">[{"type":"clause","id":"sec-intro","aoid":null,"title":"Introduction","titleHTML":"Introduction","number":"","namespace":"<no location>","location":"","referencingIds":[],"key":"Introduction"},{"type":"production","id":"prod-InputElementDiv","name":"InputElementDiv","referencingIds":[],"namespace":"<no location>","location":"","key":"InputElementDiv"},{"type":"production","id":"prod-BodyElements","name":"BodyElements","referencingIds":["_ref_0","_ref_2"],"namespace":"<no location>","location":"","key":"BodyElements"},{"type":"production","id":"prod-BodyElement","name":"BodyElement","referencingIds":["_ref_1"],"namespace":"<no location>","location":"","key":"BodyElement"},{"type":"production","id":"prod-HashbangComment","name":"HashbangComment","referencingIds":[],"namespace":"<no location>","location":"","key":"HashbangComment"},{"type":"clause","id":"sec-updated-syntax","aoid":null,"title":"Updated Lexical Productions","titleHTML":"Updated Lexical Productions","number":"1.1","namespace":"<no location>","location":"","referencingIds":[],"key":"Updated Lexical Productions"},{"type":"clause","id":"sec-syntax","aoid":null,"title":"Syntax","titleHTML":"Syntax","number":"1","namespace":"<no location>","location":"","referencingIds":[],"key":"Syntax"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A","namespace":"<no location>","location":"","referencingIds":[],"key":"Copyright & Software License"}]</script><script>"use strict";
 
 function Search(menu) {
   this.menu = menu;
@@ -1329,6 +1329,9 @@ emu-production > ins, emu-production > del,
 emu-grammar > ins, emu-grammar > del {
   display: block;
 }
+emu-rhs > ins, emu-rhs > del { 
+  display: inline;
+}
 
 tr.ins > td > ins {
   border-bottom: none;
@@ -1793,7 +1796,13 @@ li.menu-search-result-term:before {
   text-align: right;
   padding-right: 5px;
 }
-</style></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-intro" title="Introduction">Introduction</a></li><li><span class="item-toggle">◢</span><a href="#sec-syntax" title="Syntax"><span class="secnum">1</span> Syntax</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-updated-syntax" title="Updated Productions"><span class="secnum">1.1</span> Updated Productions</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-debugger-statement-runtime-semantics-evaluation" title="Runtime Semantics: Evaluation"><span class="secnum">2</span> RS: Evaluation</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / March 21, 2018</h1><h1 class="title">Hashbang Grammar for JS</h1>
+
+@media print {
+  #menu-toggle {
+    display: none; 
+  }
+}
+</style></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-intro" title="Introduction">Introduction</a></li><li><span class="item-toggle">◢</span><a href="#sec-syntax" title="Syntax"><span class="secnum">1</span> Syntax</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-updated-syntax" title="Updated Lexical Productions"><span class="secnum">1.1</span> Updated Lexical Productions</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / September 11, 2018</h1><h1 class="title">Hashbang Grammar for JS</h1>
 <style>
 emu-example figure {
   align-items: initial;
@@ -1856,27 +1865,32 @@ emu-note[type=editor] span.note {
   <h1><span class="secnum">1</span>Syntax</h1>
 
   <emu-clause id="sec-updated-syntax">
-    <h1><span class="secnum">1.1</span>Updated Productions</h1>
+    <h1><span class="secnum">1.1</span>Updated Lexical Productions</h1>
 
-    <emu-grammar><ins><emu-production name="Hashbang" collapsed="" id="prod-Hashbang">
-    <emu-nt><a href="#prod-Hashbang">Hashbang</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="2513ed0c"><emu-t>#!</emu-t><emu-nt optional=""><a href="https://tc39.github.io/ecma262/#prod-SingleLineCommentChars">SingleLineCommentChars</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs></emu-production></ins>
-    
-
-<emu-production name="Module" collapsed="" id="prod-Module">
-    <emu-nt><a href="#prod-Module">Module</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="90ea285f"><emu-nt>Hashbang_opt</emu-nt><emu-nt optional=""><a href="https://tc39.github.io/ecma262/#prod-ModuleBody">ModuleBody</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+    <emu-grammar type="definition"><ins><emu-production name="InputElementDiv" type="lexical" id="prod-InputElementDiv">
+    <emu-nt><a href="#prod-InputElementDiv">InputElementDiv</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="65e0d779"><emu-nt>HashbangComment_opt</emu-nt><emu-nt optional="" id="_ref_0"><a href="#prod-BodyElements">BodyElements</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
 </emu-production>
-<emu-production name="Script" collapsed="" id="prod-Script">
-    <emu-nt><a href="#prod-Script">Script</a></emu-nt><emu-geq>:</emu-geq><emu-rhs a="c2fb822c"><emu-nt>Hashbang_opt</emu-nt><emu-nt optional=""><a href="https://tc39.github.io/ecma262/#prod-ScriptBody">ScriptBody</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+<emu-production name="BodyElements" type="lexical" id="prod-BodyElements">
+    <emu-nt><a href="#prod-BodyElements">BodyElements</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0d79995f"><emu-nt id="_ref_1"><a href="#prod-BodyElement">BodyElement</a></emu-nt><emu-nt optional="" id="_ref_2"><a href="#prod-BodyElements">BodyElements</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+</emu-production>
+<emu-production name="BodyElement" type="lexical" id="prod-BodyElement">
+    <emu-nt><a href="#prod-BodyElement">BodyElement</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="1424dc49"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-WhiteSpace">WhiteSpace</a></emu-nt></emu-rhs>
+    <emu-rhs a="3b331ccd"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt></emu-rhs>
+    <emu-rhs a="153d7a58"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-Comment">Comment</a></emu-nt></emu-rhs>
+    <emu-rhs a="83158895"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-CommonToken">CommonToken</a></emu-nt></emu-rhs>
+    <emu-rhs a="28035084"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-DivPunctuator">DivPunctuator</a></emu-nt></emu-rhs>
+    <emu-rhs a="121314a7"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-RightBracePunctuator">RightBracePunctuator</a></emu-nt></emu-rhs>
+</emu-production></ins></emu-grammar>
+
+    <h1>Hashbang Comments</h1>
+
+    <p>Hashbang Comments are location sensitive and like other types of comments are discarded from the stream of input elements for the syntactic grammar.</p>
+    <emu-grammar type="definition"><emu-production name="HashbangComment" type="lexical" id="prod-HashbangComment">
+    <emu-nt><a href="#prod-HashbangComment">HashbangComment</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="2513ed0c"><emu-t>#!</emu-t><emu-nt optional=""><a href="https://tc39.github.io/ecma262/#prod-SingleLineCommentChars">SingleLineCommentChars</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
 </emu-production></emu-grammar>
+
   </emu-clause>
-</emu-clause>
-  <!-- es6num="13.16.1" -->
-  <emu-clause id="sec-debugger-statement-runtime-semantics-evaluation">
-    <h1><span class="secnum">2</span>Runtime Semantics: Evaluation</h1>
-    <emu-note><span class="note">Note</span><div class="note-contents">
-      <p>None.</p>
-    </div></emu-note>
-  </emu-clause><emu-annex id="sec-copyright-and-software-license">
+</emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span>Copyright &amp; Software License</h1>
       
       <h2>Copyright Notice</h2>
@@ -1896,5 +1910,4 @@ emu-note[type=editor] span.note {
 <p>THIS SOFTWARE IS PROVIDED BY THE ECMA INTERNATIONAL "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ECMA INTERNATIONAL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
     </emu-annex>
-
 </div></body>
