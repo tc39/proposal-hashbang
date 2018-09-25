@@ -2,7 +2,7 @@
 <meta charset="utf8">
 <pre class=metadata>
 title: Hashbang Grammar for JS
-stage: 1
+stage: 2
 contributors: Bradley Farias
 </pre>
 <style>
@@ -86,29 +86,28 @@ emu-example pre {
   <h1>Syntax</h1>
 
   <emu-clause id=sec-updated-syntax>
-    <h1>Updated Lexical Productions</h1>
+    <h1>ECMAScript Language: Lexical Grammar</h1>
 
-    <emu-grammar type="definition">
-      <ins>InputElementDiv ::
-            HashbangComment_opt BodyElements?
-          
-          BodyElements ::
-            BodyElement BodyElements?
-          
-          BodyElement ::
-            WhiteSpace
-            LineTerminator
-            Comment
-            CommonToken
-            DivPunctuator
-            RightBracePunctuator
+    <p>The source text of an ECMAScript |Script| or |Module| is first converted into a sequence of input elements, which are tokens, line terminators, comments, or white space. The source text is scanned from left to right, repeatedly taking the longest possible sequence of code points as the next input element.</p>
 
-      </ins>
+    <p>There are several situations where the identification of lexical input elements is sensitive to the syntactic grammar context that is consuming the input elements. This requires multiple goal symbols for the lexical grammar. <ins>The |InputElementHashbang| is used as the first token of the |Script| and |Module| syntactic grammar contexts.</ins> The |InputElementRegExpOrTemplateTail| goal is used in syntactic grammar contexts where a |RegularExpressionLiteral|, a |TemplateMiddle|, or a |TemplateTail| is permitted. The |InputElementRegExp| goal symbol is used in all syntactic grammar contexts where a |RegularExpressionLiteral| is permitted but neither a |TemplateMiddle|, nor a |TemplateTail| is permitted. The |InputElementTemplateTail| goal is used in all syntactic grammar contexts where a |TemplateMiddle| or a |TemplateTail| is permitted but a |RegularExpressionLiteral| is not permitted. In all other contexts, |InputElementDiv| is used as the lexical goal symbol.</p>
     </emu-grammar>
+
+    <emu-grammar type="definition"><ins>
+      InputElementHashbangOrRegExp ::
+        HashbangComment
+        WhiteSpace
+        LineTerminator
+        Comment
+        CommonToken
+        RightBracePunctuator
+        RegularExpressionLiteral
+    </ins></emu-grammar>
 
     <h1>Hashbang Comments</h1>
 
     <p>Hashbang Comments are location sensitive and like other types of comments are discarded from the stream of input elements for the syntactic grammar.</p>
+
     <emu-grammar type="definition">HashbangComment ::
       `#!` SingleLineCommentChars?
     </emu-grammar>
