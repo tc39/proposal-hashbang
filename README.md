@@ -24,8 +24,7 @@ Hash is commonly associated with modern terms involving `#` such as hashtag. In 
 
 ## Why only at the start of a Source Text
 
-Hashbang directives are only valid at the start of a file for interpretters in various CLI environments. There is no gain for allowing it in other places, and it overlaps a grammar space for `#!` if it is an inifix binary expression of some kind. Use `//` if you want line comments elsewhere.
-
+Hashbang directives are only valid at the start of a file for interpretters in various CLI environments. There is no gain for the intended usage by allowing it in other places and in fact could lead to confusion since it would not be picked up by CLI environments. Additionally by allowing Hashbang in other places it overlaps a grammar space for `#!` if it is an inifix binary expression of some kind. Use `//` if you want line comments elsewhere.
 
 ## Existing Notes from Meetings
 
