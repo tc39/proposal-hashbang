@@ -26,3 +26,9 @@ Hash is commonly associated with modern terms involving `#` such as hashtag. In 
 
 Hashbang directives are only valid at the start of a file for interpretters in various CLI environments. There is no gain for allowing it in other places, and it overlaps a grammar space for `#!` if it is an inifix binary expression of some kind. Use `//` if you want line comments elsewhere.
 
+
+## Existing Notes from Meetings
+
+* [March 2018](https://tc39.github.io/tc39-notes/2018-03_mar-21.html#10iic-hashbang-grammar-for-stage-2)
+* [November 2011](https://tc39.github.io/tc39-notes/2017-11_nov-28.html#10if-interpreterdirective)
+
