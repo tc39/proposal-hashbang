@@ -18,6 +18,13 @@ export {};
 console.log(1);
 ```
 
+## Status
+
+* Stage: 3
+* [Tests](https://github.com/tc39/test262/pull/1983)
+* Spec PR: TODO
+* Implementations shipping: None
+
 ## Why Hashbang instead of Shebang
 
 Hash is commonly associated with modern terms involving `#` such as hashtag. In addition for discoverability, the term "hash sign" is used for `#` but "she sign" is not.
