@@ -36,5 +36,5 @@ Hashbang directives are only valid at the start of a file for interpretters in v
 ## Existing Notes from Meetings
 
 * [March 2018](https://tc39.github.io/tc39-notes/2018-03_mar-21.html#10iic-hashbang-grammar-for-stage-2)
-* [November 2011](https://tc39.github.io/tc39-notes/2017-11_nov-28.html#10if-interpreterdirective)
+* [November 2017](https://tc39.github.io/tc39-notes/2017-11_nov-28.html#10if-interpreterdirective)
 
