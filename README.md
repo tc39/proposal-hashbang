@@ -23,7 +23,9 @@ console.log(1);
 * Stage: 3
 * [Tests](https://github.com/tc39/test262/pull/1983)
 * Spec PR: TODO
-* Implementations shipping: None
+* Implementations shipping:
+  * Chrome Canary 74
+  * Firefox Nightly 67
 
 ## Why Hashbang instead of Shebang
 
