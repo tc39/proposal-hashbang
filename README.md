@@ -1,6 +1,6 @@
 # Hashbang Grammar
 
-This proposal is to match de-facto usage in some CLI JS hosts that allow for [Shebangs / Hashbang](https://en.wikipedia.org/wiki/Shebang_(Unix)). Such hosts strip the hashbang in order to generate valid JS source texts before passing to JS engines currently. This would unify and standardize how that is done.
+This proposal is to match de-facto usage in some CLI JS hosts that allow for [Shebangs / Hashbang](https://en.wikipedia.org/wiki/Shebang_(Unix)). Such hosts strip the hashbang in order to generate valid JS source texts before passing to JS engines currently. This would move the stripping to engines, it does unify and standardize how that is done.
 
 ## Example
 
@@ -39,4 +39,3 @@ Hashbang directives are only valid at the start of a file for interpretters in v
 
 * [March 2018](https://tc39.github.io/tc39-notes/2018-03_mar-21.html#10iic-hashbang-grammar-for-stage-2)
 * [November 2017](https://tc39.github.io/tc39-notes/2017-11_nov-28.html#10if-interpreterdirective)
-
