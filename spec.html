@@ -90,17 +90,16 @@ emu-example pre {
 
     <p>The source text of an ECMAScript |Script| or |Module| is first converted into a sequence of input elements, which are tokens, line terminators, comments, or white space. The source text is scanned from left to right, repeatedly taking the longest possible sequence of code points as the next input element.</p>
 
-    <p>There are several situations where the identification of lexical input elements is sensitive to the syntactic grammar context that is consuming the input elements. This requires multiple goal symbols for the lexical grammar. <ins>The |InputElementHashbangOrRegExp| is used as the first token of the |Script| and |Module| syntactic grammar contexts.</ins> The |InputElementRegExpOrTemplateTail| goal is used in syntactic grammar contexts where a |RegularExpressionLiteral|, a |TemplateMiddle|, or a |TemplateTail| is permitted. The |InputElementRegExp| goal symbol is used in all syntactic grammar contexts where a |RegularExpressionLiteral| is permitted but neither a |TemplateMiddle|, nor a |TemplateTail| is permitted. The |InputElementTemplateTail| goal is used in all syntactic grammar contexts where a |TemplateMiddle| or a |TemplateTail| is permitted but a |RegularExpressionLiteral| is not permitted. In all other contexts, |InputElementDiv| is used as the lexical goal symbol.</p>
+    <p>There are several situations where the identification of lexical input elements is sensitive to the syntactic grammar context that is consuming the input elements. This requires multiple goal symbols for the lexical grammar. <ins>The |InputElementHashbangOrRegExp| goal is used as the first input element of a |Script| and |Module|.</ins> The |InputElementRegExpOrTemplateTail| goal is used in syntactic grammar contexts where a |RegularExpressionLiteral|, a |TemplateMiddle|, or a |TemplateTail| is permitted. The |InputElementRegExp| goal symbol is used in all syntactic grammar contexts (other than the start of a |Script| or |Module|) where a |RegularExpressionLiteral| is permitted but neither a |TemplateMiddle|, nor a |TemplateTail| is permitted. The |InputElementTemplateTail| goal is used in all syntactic grammar contexts where a |TemplateMiddle| or a |TemplateTail| is permitted but a |RegularExpressionLiteral| is not permitted. In all other contexts, |InputElementDiv| is used as the lexical goal symbol.</p>
     </emu-grammar>
 
     <emu-grammar type="definition"><ins>
       InputElementHashbangOrRegExp ::
-        HashbangComment
         WhiteSpace
         LineTerminator
         Comment
         CommonToken
-        RightBracePunctuator
+        HashbangComment
         RegularExpressionLiteral
     </ins></emu-grammar>
 
@@ -111,6 +110,10 @@ emu-example pre {
     <emu-grammar type="definition">HashbangComment ::
       `#!` SingleLineCommentChars?
     </emu-grammar>
+  </emu-clause>
 
+  <emu-clause id="sec-lexical-and-regexp-grammars">
+      <h1>The Lexical and RegExp Grammars</h1>
+      <p>A <em>lexical grammar</em> for ECMAScript is given in clause <emu-xref href="#sec-ecmascript-language-lexical-grammar"></emu-xref>. This grammar has as its terminal symbols Unicode code points that conform to the rules for |SourceCharacter| defined in <emu-xref href="#sec-source-text"></emu-xref>. It defines a set of productions, starting from the goal symbol |InputElementDiv|, |InputElementTemplateTail|, |InputElementRegExp|, |InputElementRegExpOrTemplateTail|, <ins>or |InputElementHashbangOrRegExp|</ins> that describe how sequences of such code points are translated into a sequence of input elements.</p>
   </emu-clause>
 </emu-clause>
