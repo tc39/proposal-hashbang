@@ -27,6 +27,7 @@ console.log(1);
   * [Chrome 74](https://www.chromestatus.com/features#milestone%3D74)
   * [Firefox 67](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/67)
   * [ChakraCore](https://github.com/microsoft/ChakraCore/pull/6145)
+  * Node.js 12.0.0
 
 ## Why Hashbang instead of Shebang
 
