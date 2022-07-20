@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build-loose -- --watch",
+    "build": "npm run build-loose -- --strict",
+    "build-loose": "ecmarkup --load-biblio @tc39/ecma262-biblio --verbose spec.html out.html --lint-spec"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/bmeck/proposal-hashbang#readme",
   "dependencies": {
-    "ecmarkup": "3.13.0"
+    "@tc39/ecma262-biblio": "^2.1.2339",
+    "ecmarkup": "^14.0.1"
   }
 }
